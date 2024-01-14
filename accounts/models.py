@@ -1,8 +1,7 @@
 from django.db import models
-
 from typing import Any, Optional
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserManager
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils import timezone
 
 class CustomUserManager(UserManager):
@@ -29,7 +28,7 @@ class CustomUserManager(UserManager):
     
 
 #creating the user model based on the fields above. 
-class User(AbstractBaseUser, PermissionsMixin):
+class User(AbstractUser):
     email = models.EmailField(blank=True, default='', unique=True)
     name = models.CharField(max_length=200, blank=True, default='')
 

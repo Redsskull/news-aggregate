@@ -1,7 +1,12 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views import View
 import requests
-from django.contrib.auth.decorators import login_required
+
+# class NewsView(LoginRequiredMixin, View):
+#     template_name = 'news/index.html'
+
 
 def index(request):
     r = requests.get('http://api.mediastack.com/v1/news?access_key=b967fff93412e1192e8a083ff64ed643&languages=en')

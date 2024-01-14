@@ -47,9 +47,11 @@ INSTALLED_APPS = [
     'django_summernote',
     'accounts',
     'news',
+    'crispy_forms',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 SITE_ID = 1
@@ -160,3 +162,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
