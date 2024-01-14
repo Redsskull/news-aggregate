@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render
 import requests
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     r = requests.get('http://api.mediastack.com/v1/news?access_key=b967fff93412e1192e8a083ff64ed643&languages=en')

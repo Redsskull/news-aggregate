@@ -6,11 +6,6 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, UserM
 from django.utils import timezone
 
 class CustomUserManager(UserManager):
-    """
-    I found that in order to allow special users special access to see specific planes, I had to create my own auth app, which is called account. 
-    This class is to be able to manage the creation of users in this model, and return a user to the User class that follows it.
-
-    """
     def _create_user(self, email, password, **extra_fields):
         if not email:
             raise ValueError("You have not provided a valid email address")
