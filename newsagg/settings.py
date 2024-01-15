@@ -45,13 +45,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_summernote',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'accounts',
     'news',
-    'crispy_forms',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 
 SITE_ID = 1
@@ -165,3 +165,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"

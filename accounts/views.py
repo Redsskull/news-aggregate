@@ -6,16 +6,16 @@ from .models import User
 from .forms import CustomUserCreationForm
 
 class CustomLoginView(LoginView):
-    template_name = 'accounts/login.html'
+    template_name = 'login.html'
     redirect_authenticated_user = True
 
 class CustomLogoutView(LogoutView):
-    template_name = 'accounts/logout.html'
+    template_name = 'logout.html'
 
 class CustomRegistrationView(CreateView):
     model = User
     form_class = CustomUserCreationForm
-    template_name = 'accounts/registration.html'
+    template_name = 'register.html'
     success_url = reverse_lazy('login')
 
 

@@ -4,11 +4,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 import requests
 
-# class NewsView(LoginRequiredMixin, View):
-#     template_name = 'news/index.html'
 
-
-def index(request):
+def home_page(request):
     r = requests.get('http://api.mediastack.com/v1/news?access_key=b967fff93412e1192e8a083ff64ed643&languages=en')
     res = r.json()
     data = res.get('data', [])
@@ -28,7 +25,7 @@ def index(request):
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
 
-    return render(request, 'news/index.html', {'news_list': page_obj})
+    return render(request, 'index.html', {'news_list': page_obj})
 
 
 
