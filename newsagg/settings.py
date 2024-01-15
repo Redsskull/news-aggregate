@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'accounts',
     'news',
     'bug_report',
+    'testimonials',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'

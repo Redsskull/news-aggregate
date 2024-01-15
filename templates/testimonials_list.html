@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="container mt-5">
+    <h2>Testimonials</h2>
+    <!-- Display testimonials here -->
+    {% for testimonial in testimonials %}
+        <div class="card mb-3 {% if not testimonial.approved and testimonial.user == user %}text-muted{% endif %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ testimonial.user.username }}</h5>
+                <p class="card-text">{{ testimonial.content }}</p>
+                <p class="card-text"><small class="text-muted">{{ testimonial.created_at }}</small></p>
+            </div>
+        </div>
+    {% endfor %}
+
+    <!-- Add a button to leave a testimonial -->
+    {% if user.is_authenticated %}
+        <a href="{% url 'testimonials:testimonials_leave' %}" class="btn btn-primary">Leave a Testimonial</a>
+    {% endif %}
+</div>
+
+{% endblock %}
