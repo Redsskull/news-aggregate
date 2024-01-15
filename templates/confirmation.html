@@ -2,9 +2,12 @@
 {% load crispy_forms_tags %}
 {% crispy form %}
 
+
 {% block content %}
-{% load static %}
+{%load static %}
   <div class="container mt-5">
-    <p>You have been successfully logged out. <a href="{% url 'login' %}">Login again</a>.</p>
+    <h2>Report Submitted</h2>
+    <p>Thank you for submitting the bug report. We will review it shortly.</p>
   </div>
 {% endblock %}
+

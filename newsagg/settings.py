@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'accounts',
     'news',
+    'bug_report',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
