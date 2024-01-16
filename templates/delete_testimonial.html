@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+    <h2>Delete Testimonial</h2>
+    <form method="post" action="{% url 'testimonials:delete_testimonial' testimonial.id %}" class="form">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+    </form>
+</div>
+{% endblock %}

@@ -7,14 +7,22 @@
     <h2>Testimonials</h2>
     <!-- Display testimonials here -->
     {% for testimonial in testimonials %}
-        <div class="card mb-3 {% if not testimonial.approved and testimonial.user == user %}text-muted{% endif %}">
-            <div class="card-body">
-                <h5 class="card-title">{{ testimonial.user.username }}</h5>
-                <p class="card-text">{{ testimonial.content }}</p>
-                <p class="card-text"><small class="text-muted">{{ testimonial.created_at }}</small></p>
-            </div>
+    <div class="card mb-3 {% if not testimonial.approved and testimonial.user == user %}text-muted{% endif %}">
+        <div class="card-body">
+            <h5 class="card-title">{{ testimonial.user.username }}</h5>
+            <p class="card-text">{{ testimonial.content }}</p>
+            <p class="card-text"><small class="text-muted">{{ testimonial.created_at }}</small></p>
+            
+            {% if user.is_authenticated and testimonial.user == user %}
+                {% if not testimonial.approved %}
+                    <!-- Add button for editing and deleting unapproved testimonial -->
+                    <a href="{% url 'testimonials:edit_testimonial' testimonial.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'testimonials:delete_testimonial' testimonial.id %}" class="btn btn-danger btn-sm">Delete</a>
+                {% endif %}
+            {% endif %}
         </div>
-    {% endfor %}
+    </div>
+{% endfor %}
 
     <!-- Add a button to leave a testimonial -->
     {% if user.is_authenticated %}
