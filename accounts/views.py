@@ -11,7 +11,6 @@ class CustomLoginView(LoginView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        messages.success(self.request, 'Login successful. Welcome!')
         return response
 
 class CustomLogoutView(LogoutView):
