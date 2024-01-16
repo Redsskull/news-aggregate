@@ -20,8 +20,8 @@ def home_page(request):
 
         news_list.append((title, description, image, url, published_at))
 
-    #pagination for 10 pages per page
-    paginator = Paginator(news_list, 10)
+    #pagination for 8 pages per page
+    paginator = Paginator(news_list, 8)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
 
