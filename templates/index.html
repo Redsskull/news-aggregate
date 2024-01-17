@@ -6,14 +6,16 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
         {% for title, description, image, url, published_at in news_list %}
-            <div class="col">
-                <div class="card mb-4">
-                    <img class="card-img-top" src="{% if image %}{{ image }}{% else %}{% static 'assets/default.jpg' %} {% endif %}" alt="news image" />
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="{% if image %}{{ image }}{% else %}{% static 'assets/default.jpg' %}{% endif %}" alt="news image" />
                     <div class="card-body">
                         <div class="small text-muted">{{ published_at }}</div>
-                        <h2 class="card-title h4">{{ title }}</h2>
-                        <p class="card-text">{{ description }}</p>
-                        <a class="btn btn-primary" href="{{ url }}"" target="_blank">Read more →</a>
+                        <h2 class="card-title h5 mb-2">{{ title }}</h2>
+                        <p class="card-text text-truncate">{{ description }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a class="btn btn-primary" href="{{ url }}" target="_blank">Read more →</a>
                     </div>
                 </div>
             </div>
