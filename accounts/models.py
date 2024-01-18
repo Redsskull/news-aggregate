@@ -5,7 +5,16 @@ from django.contrib.auth.models import AbstractUser, UserManager
 from django.utils import timezone
 
 class CustomUserManager(UserManager):
+    """
+    Custom user manager where email is the unique identifiers
+    for authentication instead of usernames.
+
+    """
+    
     def _create_user(self, email, password, **extra_fields):
+
+        # Create and save a user User with a given mail and password.
+
         if not email:
             raise ValueError("You have not provided a valid email address")
         
@@ -17,11 +26,13 @@ class CustomUserManager(UserManager):
         return user
     
     def create_user(self, email=None, password=None,  **extra_fields):
+        # Create and save a regular User with the given email and password
         extra_fields.setdefault('is_staff', False)
         extra_fields.setdefault('is_superuser', False)
         return self._create_user(email, password, **extra_fields)
     
     def create_superuser(self, email=None, password=None,  **extra_fields):
+        #Create and save a SuperUser with the given email and password.
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         return self._create_user(email, password, **extra_fields)
@@ -29,6 +40,11 @@ class CustomUserManager(UserManager):
 
 #creating the user model based on the fields above. 
 class User(AbstractUser):
+    """
+    Custom User model where email is the unique identifier for authentication.
+    Inherits from Django's AbstractUser.
+
+    """
     email = models.EmailField(blank=True, default='', unique=True)
     name = models.CharField(max_length=200, blank=True, default='')
 
