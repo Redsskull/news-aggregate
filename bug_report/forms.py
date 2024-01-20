@@ -4,6 +4,7 @@ from crispy_forms.layout import Submit
 from .models import BugReport
 
 class BugReportForm(forms.ModelForm):
+    #form based on the bug report model
     class Meta:
         model = BugReport
         fields = ['title', 'description']
