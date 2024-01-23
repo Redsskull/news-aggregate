@@ -4,6 +4,8 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .models import User
 from .forms import CustomUserCreationForm
+from django.contrib.auth.decorators import user_passes_test
+from django.shortcuts import get_object_or_404, redirect
 
 # Custom Login View
 class CustomLoginView(LoginView):
@@ -58,3 +60,13 @@ class CustomRegistrationView(CreateView):
         response = super().form_valid(form)
         messages.success(self.request, 'Account created successfully. Please log in.')
         return response
+    
+from django.contrib.auth.decorators import user_passes_test
+from django.shortcuts import get_object_or_404, redirect
+
+@user_passes_test(lambda u: u.is_superuser)
+def suspend_user(request, user_id):
+    user = get_object_or_404(User, id=user_id)
+    user.is_suspended = True
+    user.save()
+    return redirect('admin:accounts_customuser_changelist')
