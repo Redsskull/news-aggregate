@@ -5,7 +5,7 @@
 {% block content %}
 {% load static %}
 <div class="container mt-5">
-    <h2>Edit Testimonial</h2>
+    <h2 style = "color:white">Edit Testimonial</h2>
     <form method="post" action="{% url 'testimonials:edit_testimonial' testimonial.id %}" class="form">
         {% csrf_token %}
         {{ form|crispy }}

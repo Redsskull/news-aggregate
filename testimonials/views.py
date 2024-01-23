@@ -3,7 +3,7 @@ from django.views import View
 from .models import Testimonial
 from .forms import TestimonialForm
 from django.views.generic.edit import CreateView
-from django.urls import reverse_lazy
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseForbidden
 from django.contrib import messages
@@ -60,6 +60,6 @@ class DeleteTestimonialView(View):
         testimonial = get_object_or_404(Testimonial, id=testimonial_id, user=request.user)
         testimonial.delete()
         messages.success(request, 'Testimonial deleted successfully.')
-        return redirect('testimonials:testimonials_list')
+        return JsonResponse({'message': 'Testimonial deleted successfully.'})
 
 

@@ -19,7 +19,7 @@
 </head>
 <body>
     <!-- Responsive navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg" id = "nav-color">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home_page' %}">Red News</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     {% if user.is_authenticated %}
-                    <span class="navbar-text text-danger">
+                    <span class="navbar-text text-warning">
                         Hello, {{ user.get_short_name }}!
                     </span>
                     {% endif %}
@@ -46,11 +46,11 @@
         </div>
     </nav>
     <!-- Page header with logo and tagline-->
-    <header class="py-1 bg-light">
+    <header>
         <div class="container">
             <div class="text-center my-5">
                 <h1 class="fw-bolder">Welcome to Red News Aggregate!</h1>
-                <p class="lead mb-0">A place to find all the news you'll ever want</p>
+                <p class="lead mb-0" id = "head-color">A place to find all the news you'll ever want</p>
             </div>
         </div>
     </header>
@@ -76,58 +76,19 @@
             </div>
         </div>
     {% endif %}
-    <!-- pagination -->
-    <div class="pagination justify-content-center mt-3">
-        <ul class="pagination">
-            {% if news_list.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?page=1" aria-label="First">
-                        <span aria-hidden="true">&laquo;&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ news_list.previous_page_number }}" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-            {% endif %}
-    
-            <li class="page-item disabled">
-                <span class="page-link">
-                    Page {{ news_list.number }} of {{ news_list.paginator.num_pages }}.
-                </span>
-            </li>
-    
-            {% if news_list.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ news_list.next_page_number }}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ news_list.paginator.num_pages }}" aria-label="Last">
-                        <span aria-hidden="true">&raquo;&raquo;</span>
-                    </a>
-                </li>
-            {% endif %}
-        </ul>
-    </div>
-    
        <!-- Footer -->
-       <footer class=" text-center text-lg-start" style="background-color: #303bdb;">
+       <footer class=" text-center text-lg-start" style="background-color: #153243;">
         <div class="container d-flex justify-content-center py-3">
-          <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
-            <i class="fab fa-facebook-f"></i>
+            <a href="https://www.facebook.com/nat.everett.9" target="_blank" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #e28413;">
+                <i class="fab fa-facebook-f"></i>
+              </a>
           </button>
-          <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
-            <i class="fab fa-youtube"></i>
-          </button>
-          <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
+          <a href="https://www.instagram.com/redsskull/" target="_blank" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #e28413;">
             <i class="fab fa-instagram"></i>
-          </button>
-          <button type="button" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #54456b;">
-            <i class="fab fa-twitter"></i>
-          </button>
+          </a>
+          <a href="https://www.linkedin.com/in/redsskull/" target="_blank" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #e28413;">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
     
         <!-- Copyright -->
