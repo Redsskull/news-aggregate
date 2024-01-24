@@ -2,7 +2,7 @@
 
 "Reds News Aggregate" is a platform designed to bring together the latest news and updates related to the world of reds. This could include news about sports teams, cultural events, or any topic associated with the color red.
 
-Add am I responsive
+[![Site view across devices](images/responsive.jpg)]
 
 The live link for "Reds News Aggregate" can be found [HERE](https://reds-news-aggregate.example.com/)
 
@@ -49,19 +49,19 @@ The color scheme is based on the blog template found [here](https://startbootstr
 
 [![Testimonials](images/testimonials.png)]
 
-Those were mostly done in Wordpress to start with and later in Gimp to edit. 
+- Those were mostly done in Wordpress to start with and later in Gimp to edit. 
 
 
 ### Typography
 
-All fonts were obtained by the Bootstrap theme linked above. they are free to use under the MIT license.
+- All fonts were obtained by the Bootstrap theme linked above. they are free to use under the MIT license.
 ## Features
 
 ### Existing Features:
 
 #### Home Page:
 
-[![Home Page](will need to add image)]
+[![Home Page](images/home_page.jpg)]
 
 #### Navigation Bar:
 
@@ -120,13 +120,12 @@ All fonts were obtained by the Bootstrap theme linked above. they are free to us
 ### Validator Testing
 | **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
-| printstatements - settings.py | PEP8 validator | [No issues found](static/images-readme/readme-pep8.png) | ✅ |
-| printstatements - urls.py | PEP8 validator | No issues found | ✅ |
-| blog app - forms.py | PEP8 validator | No issues found | ✅ |
-| blog app - models.py | PEP8 validator | No issues found | ✅ |
-| blog app - views.py | PEP8 validator | No issues found | ✅ |
-| blog app - urls.py | PEP8 validator | No issues found | ✅ |
-| blog app - admin.py | PEP8 validator | No issues found | ✅ |
+| newsagg - settings.py | PEP8 validator | [![No issues found](images/settings.jpg)] | ✅ |
+| newsagg - urls.py | PEP8 validator | No issues found | ✅ |
+| news app - models.py | PEP8 validator | No issues found | ✅ |
+| news app- views.py | PEP8 validator | No issues found | ✅ |
+| news app - urls.py | PEP8 validator | No issues found | ✅ |
+| news app - admin.py | PEP8 validator | No issues found | ✅ |
 | artprint app - forms.py | PEP8 validator | No issues found | ✅ |
 | artprint app - models.py | PEP8 validator | No issues found | ✅ |
 | artprint app - views.py | PEP8 validator | No issues found | ✅ |
