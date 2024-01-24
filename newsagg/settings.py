@@ -112,7 +112,7 @@ DATABASES = {
     'default': dj_database_url.config(),
 }
 
-API = os.environ.get("API_KEY")
+API = "http://api.mediastack.com/v1/news?access_key=b967fff93412e1192e8a083ff64ed643&languages=en"
 
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'

@@ -126,11 +126,11 @@ The color scheme is based on the blog template found [here](https://startbootstr
 | news app- views.py | PEP8 validator | No issues found | ✅ |
 | news app - urls.py | PEP8 validator | No issues found | ✅ |
 | news app - admin.py | PEP8 validator | No issues found | ✅ |
-| artprint app - forms.py | PEP8 validator | No issues found | ✅ |
-| artprint app - models.py | PEP8 validator | No issues found | ✅ |
-| artprint app - views.py | PEP8 validator | No issues found | ✅ |
-| artprint app - urls.py | PEP8 validator | No issues found | ✅ |
-| artprint app - admin.py | PEP8 validator | No issues found | ✅ |
+| testimonials app - forms.py | PEP8 validator | No issues found | ✅ |
+| testimonials app - models.py | PEP8 validator | No issues found | ✅ |
+| testimonials app - views.py | PEP8 validator | No issues found | ✅ |
+| testimonials app - urls.py | PEP8 validator | No issues found | ✅ |
+| testimonials app - admin.py | PEP8 validator | No issues found | ✅ |
 | style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](static/images-readme/readme-w3c-css.png) | ✅ |
 | Home page - html | [W3C](https://validator.w3.org/) validator - source code | No issues found | ✅ |
 | About page - html | W3C validator - source code | No issues found | ✅ |
