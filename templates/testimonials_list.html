@@ -21,7 +21,7 @@
             {% if user.is_authenticated and testimonial.user == user %}
                     <!-- Add button for editing and deleting unapproved testimonial -->
                     <a href="{% url 'testimonials:edit_testimonial' testimonial.id %}" class="btn btn-warning btn-sm">Edit</a>
-                    <a href="#" class="btn btn-danger btn-sm delete-testimonial-btn" data-toggle="modal" data-target="#deleteModal" data-url="{% url 'testimonials:delete_testimonial' testimonial.id %}">Delete</a>
+                    <a href="#" class="btn btn-danger btn-sm delete-testimonial-btn" data-toggle="modal" data-target="#deleteModal" data-id="{{ testimonial.id }}">Delete</a>
             {% endif %}
         </div>
     </div>
@@ -29,7 +29,7 @@
 
     <!-- Add a button to leave a testimonial -->
     {% if user.is_authenticated %}
-        <a href="{% url 'testimonials:testimonials_leave' %}" class="btn btn-primary">Leave a Testimonial</a>
+        <a href="{% url 'testimonials:add_testimonial' %}" class="btn btn-primary">Leave a Testimonial</a>
     {% endif %}
 </div>
  <!-- Hidden input to store testimonial ID -->
@@ -48,7 +48,7 @@
              </div>
              <div class="modal-footer">
                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                 <button type="button" id="confirmDeleteBtnModal" class="btn btn-danger">Delete</button>
+                 <a id="confirmDeleteBtnModal" class="btn btn-danger">Delete</a>
              </div>
          </div>
      </div>

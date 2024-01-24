@@ -14,40 +14,24 @@ document.addEventListener('DOMContentLoaded', function() {
     deleteButtons.forEach(function(button) {
         button.addEventListener('click', function() {
             // Store the testimonial ID in a data attribute
-            var testimonialId = button.getAttribute('data-testimonial-id');
-
-            // Store the testimonial ID in a hidden input in the modal
-            document.getElementById('testimonialIdInput').value = testimonialId;
+            const testimonialId = button.getAttribute('data-id');
+            const a = document.querySelector('#confirmDeleteBtnModal');
+            a.href = "/testimonials/"+ testimonialId +"/delete/" 
 
             // Show the delete modal
-            var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
             deleteModal.show();
         });
     });
 
     // Event listener for the confirm delete button
     document.getElementById('confirmDeleteBtn').addEventListener('click', function() {
-        // Get the testimonial ID from the hidden input
-        var testimonialId = document.getElementById('testimonialIdInput').value;
 
-        // Use AJAX to delete the testimonial
-        fetch('/testimonials/<int:testimonial_id>/delete/' + testimonialId, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': document.getElementsByName('csrfmiddlewaretoken')[0].value,
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle the response or perform additional actions
-            console.log('Testimonial deleted successfully:', data);
 
+    
             // Close the modal
             const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
             deleteModal.hide();
 
-        })
-        .catch(error => console.error('Error:', error));
     });
 });

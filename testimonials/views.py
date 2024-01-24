@@ -3,10 +3,7 @@ from django.views import View
 from django.views.generic import ListView
 from .models import Testimonial
 from .forms import TestimonialForm
-from django.views.generic.edit import CreateView
-from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponseForbidden
 from django.contrib import messages
 
 
@@ -56,16 +53,18 @@ class EditTestimonialView(View):
         return render(request, self.template_name, {'form': form, 'testimonial': testimonial})
 
 class DeleteTestimonialView(View):
-    template_name = 'delete_testimonial.html'
+    #keeping this failed get request for reference
+    # def get(self, request, testimonial_id):
+    #       testimonial = get_object_or_404(Testimonial, id=testimonial_id, user=request.user)
+    #       return render(request, self.template_name, {'testimonial': testimonial})
 
     def get(self, request, testimonial_id):
         testimonial = get_object_or_404(Testimonial, id=testimonial_id, user=request.user)
-        return render(request, self.template_name, {'testimonial': testimonial})
-
-    def post(self, request, testimonial_id):
-        testimonial = get_object_or_404(Testimonial, id=testimonial_id, user=request.user)
         testimonial.delete()
         messages.success(request, 'Testimonial deleted successfully.')
-        return JsonResponse({'message': 'Testimonial deleted successfully.'})
+        testimonials = Testimonial.objects.all()
+        if not testimonials:
+            messages.error(request, '')
+        return render(request,'testimonials_list.html', {'testimonials': testimonials})
 
 
