@@ -17,6 +17,7 @@
             
             <p class="card-text text-dark">{{ testimonial.content }}</p>
             <p class="card-text"><small class="text-muted">{{ testimonial.created_at }}</small></p>
+            <p class="card-text"><small class="text-muted">{{ testimonial.user }}</small></p>
 
             {% if user.is_authenticated and testimonial.user == user %}
                     <!-- Add button for editing and deleting unapproved testimonial -->
