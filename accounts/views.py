@@ -61,8 +61,6 @@ class CustomRegistrationView(CreateView):
         messages.success(self.request, 'Account created successfully. Please log in.')
         return response
     
-from django.contrib.auth.decorators import user_passes_test
-from django.shortcuts import get_object_or_404, redirect
 
 @user_passes_test(lambda u: u.is_superuser)
 def suspend_user(request, user_id):

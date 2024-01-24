@@ -4,7 +4,7 @@
 
 {% block content %}
 {% load static %}
-<div class="container mt-5">
+<div class="container mt-5" style = "color:white;">
     <h2>Add Testimonial</h2>
     <form method="post" action="{% url 'testimonials:add_testimonial' %}" class="form">
         {% csrf_token %}
