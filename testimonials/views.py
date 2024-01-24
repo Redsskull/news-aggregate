@@ -47,8 +47,6 @@ class EditTestimonialView(View):
             testimonial.approved = False
             testimonial.save()
 
-            
-            messages.success(request, 'Testimonial updated successfully.')
             return redirect('testimonials:testimonials_list')
         return render(request, self.template_name, {'form': form, 'testimonial': testimonial})
 
@@ -59,12 +57,16 @@ class DeleteTestimonialView(View):
     #       return render(request, self.template_name, {'testimonial': testimonial})
 
     def get(self, request, testimonial_id):
-        testimonial = get_object_or_404(Testimonial, id=testimonial_id, user=request.user)
-        testimonial.delete()
-        messages.success(request, 'Testimonial deleted successfully.')
+        testimonial = Testimonial.objects.filter(id=testimonial_id, user=request.user)
+        if testimonial:
+            testimonial.delete()
+            messages.success(request, 'Testimonial deleted successfully.')
         testimonials = Testimonial.objects.all()
-        if not testimonials:
-            messages.error(request, '')
-        return render(request,'testimonials_list.html', {'testimonials': testimonials})
+        try:
+            return render(request,'testimonials_list.html', {'testimonials': testimonials})
+        except:
+            # messages.error(request, '')(this message preveted an error. keeping for future study)
+            return render(request,'testimonials_list.html')
+        
 
 
