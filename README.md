@@ -240,16 +240,12 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 ## Credits
 
 ### Content
+- All news content is the free version of mediastacks api.
 - [Martina Terlevic](https://github.com/SephTheOverwitch): I didn't know what CRUD functionality to put in this idea of mine. In fact, I was not very creative at all. She helped me come up with idead when I needed them.
 - “I think therefore I blog” walkthrough: without this walkthorugh I wouldn't have known a thing. The first steps when I was starting this app were directly taken from them, such as how to make migrations, even start a project. 
 - [Sean](https://www.linkedin.com/in/seanmeadedev/): a Code Institute alumni who I always enjoy talking tech with. When I end of my knowledge in JavaScript, he helped me learn more. The CRUD modal in the Testimonial app would not be possible without him.
 - [startbootstrap](https://startbootstrap.com/) their blog template and CSS was used as a base for the design of this project.
 - Much of the code written here was done through a lot of research, much trial and error and hours staring at a traceback. Stackoverflow, reddit/learnprogramming and reddit/Django were all used to help write the code. 
-
-
-### Media
-- All photography displayed in the Artists gallery was created by me.
-- The drawings were provided by my friend, [Eleni Sarri](https://www.instagram.com/elenibydesign/), with her permission.
 
 #### Pexels:
 - Default news post image, by: [Suzy Hazelwood](https://www.pexels.com/photo/red-framed-eyeglasses-on-newspapers-3886870/)
