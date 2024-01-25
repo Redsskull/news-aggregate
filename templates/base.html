@@ -26,12 +26,12 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                {% if user.is_authenticated %}
+                <span class="navbar-text text-warning">
+                    Hello, {{ user.get_short_name }}!
+                </span>
+                {% endif %}
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    {% if user.is_authenticated %}
-                    <span class="navbar-text text-warning">
-                        Hello, {{ user.get_short_name }}!
-                    </span>
-                    {% endif %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'home_page' %}">Home</a></li>
                     {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
@@ -82,7 +82,6 @@
             <a href="https://www.facebook.com/nat.everett.9" target="_blank" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #e28413;">
                 <i class="fab fa-facebook-f"></i>
               </a>
-          </button>
           <a href="https://www.instagram.com/redsskull/" target="_blank" class="btn btn-primary btn-lg btn-floating mx-2" style="background-color: #e28413;">
             <i class="fab fa-instagram"></i>
           </a>

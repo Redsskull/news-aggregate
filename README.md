@@ -2,7 +2,7 @@
 
 "Reds News Aggregate" is a platform designed to bring together the latest news and updates related to the world of reds. This could include news about sports teams, cultural events, or any topic associated with the color red.
 
-[![Site view across devices](images/responsive.jpg)]
+![Site view across devices](images/responsive.jpg)
 
 The live link for "Reds News Aggregate" can be found [HERE](https://reds-news-aggregate.example.com/)
 
@@ -39,15 +39,15 @@ Users can access a constantly updating feed of the latest news related to the co
 ## Design
 
 ### Color Scheme
-The color scheme is based on the blog template found [here](https://startbootstrap.com/template/blog-home) and the color template chosen by me [![Here](images/my_platte.png)]
+The color scheme is based on the blog template found [here](https://startbootstrap.com/template/blog-home) and the color template chosen by me ![Here](images/my_platte.png)
 
 ##### Home Page: 
 
-[![News](images/news.png)]
+![News](images/news.png)
 
 ##### Blog Page:
 
-[![Testimonials](images/testimonials.png)]
+![Testimonials](images/testimonials.png)
 
 - Those were mostly done in Wordpress to start with and later in Gimp to edit. 
 
@@ -55,54 +55,55 @@ The color scheme is based on the blog template found [here](https://startbootstr
 ### Typography
 
 - All fonts were obtained by the Bootstrap theme linked above. they are free to use under the MIT license.
+
 ## Features
 
 ### Existing Features:
 
 #### Home Page:
 
-[![Home Page](images/home_page.jpg)]
+![Home Page](images/home_page.jpg)
 
 #### Navigation Bar:
 
 ##### Desktop:
 
-[![Navbar desktop](images/navbar_desktop.jpg)]
+![Navbar desktop](images/navbar_desktop.jpg)
 
 ##### Mobile:
 
-[![Navbar mobile](images/navbar_mobile.jpg)]
+![Navbar mobile](images/navbar_mobile.jpg)
 
 #### Testimonials Page:
 
-[![Testimonials ](images/testimonials.png)]
+![Testimonials ](images/testimonials.png)
 
 #### Bug report page Page:
 
-[![Bug Report](images/bug_report.jpg)]
+![Bug Report](images/bug_report.jpg)
 
 #### Log in, Log out & Sign up:
 
 ##### Login:
 
-[![Login](images/login.jpg)]
+![Login](images/login.jpg)
 
 ##### Logout:
 
-[![Logout modal ]()]
+![Logout modal ](images/logout.jpg)
 
 ##### Register:
 
-[![Register](images/register.jpg)]
+![Register](images/register.jpg)
 
 #### Social Links:
 
-[![social_links](images/socila_links.jpg)]
+![social_links](images/social_links.jpg)
 
 ### Who gives a C.R.U.D:
 - The buttons to invite you to submit,edit, read and delete a new testimonial will be found on the **"testimonials"** page.
 - they are only visible to users who are signed in.
-![CRUD](images/CRUD.png)
+![CRUD](images/CRUD.jpg)
 
 ## User Stories
 
@@ -141,7 +142,7 @@ The color scheme is based on the blog template found [here](https://startbootstr
 | accounts app - forms.py | PEP8 validator | No issues found | ✅ |
 | accounts app - urls.py | PEP8 validator | No issues found | ✅ |
 | all automated test files | PEP8 validator | No issues found | ✅ |
-| style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [No issues found](static/images-readme/readme-w3c-css.png) | ✅ |
+| style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [![No issues found](images/css.jpg)] | ✅ |
 | Home page - html | [W3C](https://validator.w3.org/) validator - source code | No issues found | ✅ |
 | About page - html | W3C validator - source code | No issues found | ✅ |
 | Blog page - html | W3C validator - source code | No issues found | ✅ |
