@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Store the testimonial ID in a data attribute
             const testimonialId = button.getAttribute('data-id');
             const a = document.querySelector('#confirmDeleteBtnModal');
-            a.href = "/testimonials/"+ testimonialId +"/delete/" 
+            a.href = "/testimonials/"+ testimonialId +"/delete/" ;
 
             // Show the delete modal
             const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));

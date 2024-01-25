@@ -8,7 +8,7 @@
         {% for title, description, image, url, published_at in news_list %}
             <div class="col mb-4 custom-card">
                 <div class="card h-100">
-                    <img class="card-img-top" src="{% if image %}{{ image }}{% else %}{% static 'assets/default.jpg' %}{% endif %}" alt="news image" />
+                    <img class="card-img-top" src="{% if image %}{{ image }}{% else %}{% static 'assets/default.webp' %}{% endif %}" alt="news image" />
                     <div class="card-body">
                         <div class="small text-muted">{{ published_at }}</div>
                         <h2 class="card-title h5 mb-2">{{ title }}</h2>

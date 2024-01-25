@@ -121,7 +121,7 @@ The color scheme is based on the blog template found [here](https://startbootstr
 ### Validator Testing
 | **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
-| newsagg - settings.py | PEP8 validator | [![No issues found](images/settings.jpg)] | ✅ |
+| newsagg - settings.py | PEP8 validator | ![No issues found](images/settings.jpg) | ✅ |
 | newsagg - urls.py | PEP8 validator | No issues found | ✅ |
 | news app - models.py | PEP8 validator | No issues found | ✅ |
 | news app- views.py | PEP8 validator | No issues found | ✅ |
@@ -142,18 +142,19 @@ The color scheme is based on the blog template found [here](https://startbootstr
 | accounts app - forms.py | PEP8 validator | No issues found | ✅ |
 | accounts app - urls.py | PEP8 validator | No issues found | ✅ |
 | all automated test files | PEP8 validator | No issues found | ✅ |
-| style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | [![No issues found](images/css.jpg)] | ✅ |
+| style.css | [W3C - Jigsaw](https://jigsaw.w3.org/css-validator/) validator | ![No issues found](images/css.jpg) | ✅ |
 | Home page - html | [W3C](https://validator.w3.org/) validator - source code | No issues found | ✅ |
-| About page - html | W3C validator - source code | No issues found | ✅ |
-| Blog page - html | W3C validator - source code | No issues found | ✅ |
-| Prints page - html | W3C validator - source code | No issues found | ✅ |
+| Testimonials page - html | W3C validator - source code | No issues found | ✅ |
+| Report a bug page - html | W3C validator - source code | No issues found | ✅ |
 | Sign-in page - html | W3C validator - source code | No issues found | ✅ |
 | Home page - html | lighthouse | [Acceptable scores](static/images-readme/readme-lighthouse.png) | ✅ |
-| About page - html | lighthouse | Acceptable scores | ✅ |
-| Blog page - html | lighthouse | Acceptable scores | ✅ |
-| Prints page - html | lighthouse | Acceptable scores | ✅ |
+| Testimonials page - html | lighthouse | Acceptable scores | ✅ |
+| Report a bug page - html | lighthouse | Acceptable scores | ✅ |
 | Sign-in page - html | lighthouse | Acceptable scores | ✅ |
 | Brave browser | Launch site | Site opens without issue | ✅ |
+| scripts.js |[jshint](https://jshint.com/)| ![No errors found](image/javascript.jpg) | ✅ |
+
+- Javascript testing does not recognize the bootstrap variable, but it is the syntax required to initilize the modals I am using. 
 
 ### Responsiveness testing
 
@@ -161,12 +162,10 @@ The color scheme is based on the blog template found [here](https://startbootstr
 | ----------------------------- | ----------------------- | --------------------------- | ---------- |
 | Home page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
 | Home page - responsiveness    | Size site up to 1920ox  | all elements stay on screen | ✅         |
-| About page - responsiveness   | Size site down to 320px | all elements stay on screen | ✅         |
-| About page - responsiveness   | Size site up to 1920ox  | all elements stay on screen | ✅         |
-| Prints page - responsiveness  | Size site down to 320px | all elements stay on screen | ✅         |
-| Prints page - responsiveness  | Size site up to 1920ox  | all elements stay on screen | ✅         |
-| Blog page - responsiveness    | Size site down to 320px | all elements stay on screen | ✅         |
-| Blog page - responsiveness    | Size site up to 1920ox  | all elements stay on screen | ✅         |
+| Testimonial page - responsiveness   | Size site down to 320px | all elements stay on screen | ✅         |
+| Testimonial page - responsiveness   | Size site up to 1920ox  | all elements stay on screen | ✅         |
+| Report a bug page - responsiveness  | Size site down to 320px | all elements stay on screen | ✅         |
+| Report a bug page - responsiveness  | Size site up to 1920ox  | all elements stay on screen | ✅         |
 | Sign-in page - responsiveness | Size site down to 320px | all elements stay on screen | ✅         |
 | Sign-in page - responsiveness | Size site up to 1920ox  | all elements stay on screen | ✅         |
 
@@ -174,29 +173,83 @@ The color scheme is based on the blog template found [here](https://startbootstr
 
 | **TEST**          | **ACTION**             | **EXPECTATION**          | **RESULT** |
 | ----------------- | ---------------------- | ------------------------ | ---------- |
-| Blog - Create     | Add new instance to DB | Instance created         | ✅         |
-| Blog - Read       | Retrieve all instances | Instances visible in UI  | ✅         |
-| Blog - Update     | Modify an instance     | Mods saved & visible     | ✅         |
-| Blog - Delete     | Delete an instance     | Instance removed from UI | ✅         |
-| Comments - Create | Add new instance to DB | Instance created         | ✅         |
-| Comments - Read   | Retrieve all instances | Instances visible in UI  | ✅         |
-| Artprint - Create | Add new instance to DB | Instance created         | ✅         |
-| Artprint - Read   | Retrieve all instances | Instances visible in UI  | ✅         |
-| Artprint - Update | Modify an instance     | Mods saved & visible     | ✅         |
-| Artprint - Delete | Delete an instance     | Instance removed from UI | ✅         |
-| Like - Create | Add new instance to DB | Instance created         | ✅         |
-| Like - Delete | Delete an instance     | Instance removed from UI | ✅         |
-
+| Testimonial - Create     | Add new instance to DB | Instance created         | ✅         |
+| Testimonial - Read       | Retrieve all instances | Instances visible in UI  | ✅         |
+| Testimonial- Update     | Modify an instance     | Mods saved & visible     | ✅         |
+| Testimonial - Delete     | Delete an instance     | Instance removed from UI | ✅         |
 ### FEATURES
 
 | **TEST**                      | **ACTION**             | **EXPECTATION**                                           | **RESULT** |
 | ----------------------------- | ---------------------- | --------------------------------------------------------- | ---------- |
 | Navigation bar                | Click on nav link      | user routed to correct page                               | ✅         |
 | Footer links                  | Click on footer links  | user routed to new browser tab                            | ✅         |
-| Like button                   | Click "like"           | Post liked/unliked accordingly                            | ✅         |
 | Edit button                   | Click edit button      | user navigated to edit screen                             | ✅         |
-| Delete button                 | Click delete button    | print/blog removed from UI                                | ✅         |
+| Delete button                 | Click delete button    | Testimonial removed from UI                                | ✅         |
 | Internal links                | Click link             | User routed to appropriate page                           | ✅         |
 | Login                         | User logs in           | UI updates & user is logged in                            | ✅         |
 | Sign up                       | User signs up          | new account created for the user                          | ✅         |
-| Logout                        | User clicks logout     | UI updates, user is logged out, user cannot create a post | ✅         |
+| Logout                        | User clicks logout     | UI updates, user is logged out, user cannot create a Testimonial or report a bug | ✅         |
+
+### Automated testing:
+- I've written and ran as many automated tests as time and knowledge let me. I've run them ![they all passed](image/autotest.jpg) 
+
+## Technologies Used
+### Main Languages Used
+- HTML5
+- CSS3
+- Javascript
+- Python
+- Django
+- Bootstrap
+- SQL - Postgres
+
+
+### Frameworks, Libraries & Programs Used
+- Bootstrap theme fonts were used. custom vars which came with the theme are located in the styles.css
+- Font Awesome - to add icons to the social links in the footer element.
+- Vscode was used to write all the code present in the repository. 
+- GitHub was used for version control
+- Wordpress was used to get an intial idea of how I'd like the site to look.
+- Am I Responsive? - to ensure the project looked good across all devices.
+- Favicon was provided with the Bootstrap theme
+- Gimp - for photo editing
+- Django
+- Bootstrap
+
+### Installed Packages:
+- 'django<4' gunicorn
+- dj_database_url psycopg
+- 'crispy_forms',
+-'crispy_bootstrap5'
+
+## Deployment
+The site was deployed to Heroku. The steps to deploy are as follows:
+- Install Django & Gunicorn:
+```pip3 install 'django<4' gunicorn```
+- Creating the requirements.txt file with the following command:
+```pip3 freeze --local > requirements.txt```
+- navigated to [Heroku](www.heroku.com) & created a new app called news-agg.
+- added the Heroku Postgres database to the config vars.
+- added SECRET_KEY config var to Heroku
+- added Heroku to the ALLOWED_HOSTS in settings.py
+- created the Procfile
+- pushed the project to Github
+- connected my github account to Heroku through the Deploy tab
+- connected my github project repository, and then clicked on the "Deploy" button
+
+## Credits
+
+### Content
+- [Martina Terlevic](https://github.com/SephTheOverwitch): I didn't know what CRUD functionality to put in this idea of mine. In fact, I was not very creative at all. She helped me come up with idead when I needed them.
+- “I think therefore I blog” walkthrough: without this walkthorugh I wouldn't have known a thing. The first steps when I was starting this app were directly taken from them, such as how to make migrations, even start a project. 
+- [Sean](https://www.linkedin.com/in/seanmeadedev/): a Code Institute alumni who I always enjoy talking tech with. When I end of my knowledge in JavaScript, he helped me learn more. The CRUD modal in the Testimonial app would not be possible without him.
+- [startbootstrap](https://startbootstrap.com/) their blog template and CSS was used as a base for the design of this project.
+- Much of the code written here was done through a lot of research, much trial and error and hours staring at a traceback. Stackoverflow, reddit/learnprogramming and reddit/Django were all used to help write the code. 
+
+
+### Media
+- All photography displayed in the Artists gallery was created by me.
+- The drawings were provided by my friend, [Eleni Sarri](https://www.instagram.com/elenibydesign/), with her permission.
+
+#### Pexels:
+- Default news post image, by: [Suzy Hazelwood](https://www.pexels.com/photo/red-framed-eyeglasses-on-newspapers-3886870/)
