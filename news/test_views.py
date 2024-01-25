@@ -2,6 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from unittest.mock import patch
 
+
 class HomePageViewTest(TestCase):
     def setUp(self):
         self.client = Client()
@@ -28,3 +29,4 @@ class HomePageViewTest(TestCase):
         self.assertTemplateUsed(response, 'index.html')
         self.assertIn('news_list', response.context)
         self.assertEqual(len(response.context['news_list']), 1)
+        

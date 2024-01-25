@@ -1,6 +1,8 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from accounts.views import CustomLoginView, CustomLogoutView, CustomRegistrationView
+from accounts.views import (
+    CustomLoginView, CustomLogoutView, CustomRegistrationView
+)
 from accounts.forms import CustomUserCreationForm
 from accounts.models import User
 
@@ -8,7 +10,7 @@ from accounts.models import User
 class CustomLoginViewTest(TestCase):
     def setUp(self):
         self.client = Client()
-        self.login_url = reverse('login') 
+        self.login_url = reverse('login')
 
     def test_login_template(self):
         response = self.client.get(self.login_url)
@@ -16,12 +18,10 @@ class CustomLoginViewTest(TestCase):
         self.assertTemplateUsed(response, 'login.html')
 
 
-
-
 class CustomLogoutViewTest(TestCase):
     def setUp(self):
         self.client = Client()
-        self.logout_url = reverse('logout')  
+        self.logout_url = reverse('logout')
 
     def test_logout_template(self):
         response = self.client.get(self.logout_url)
@@ -32,17 +32,15 @@ class CustomLogoutViewTest(TestCase):
         self.assertEqual(str(messages[0]), 'Logout successful. Goodbye!')
 
 
-
-
 class CustomRegistrationViewTest(TestCase):
     def setUp(self):
         self.client = Client()
-        self.register_url = reverse('register')  
+        self.register_url = reverse('register')
 
     def test_registration_template(self):
         response = self.client.get(self.register_url)
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'register.html')  
+        self.assertTemplateUsed(response, 'register.html')
 
     def test_form_valid(self):
         form = CustomUserCreationForm(data={
@@ -63,5 +61,3 @@ class CustomRegistrationViewTest(TestCase):
             'password2': 'testpassword123'
         })
         self.assertFalse(form.is_valid())
-
-  

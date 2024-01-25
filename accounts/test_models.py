@@ -2,10 +2,13 @@ from django.test import TestCase
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 
+
 class CustomUserManagerTest(TestCase):
     def test_create_user(self):
         User = get_user_model()
-        user = User.objects.create_user(email='normal@user.com', password='foo')
+        user = User.objects.create_user(
+            email='normal@user.com', password='foo'
+        )
         self.assertEqual(user.email, 'normal@user.com')
         self.assertTrue(user.check_password('foo'))
         self.assertFalse(user.is_staff)
@@ -18,17 +21,22 @@ class CustomUserManagerTest(TestCase):
 
     def test_create_superuser(self):
         User = get_user_model()
-        admin_user = User.objects.create_superuser('super@user.com', 'foo')
+        admin_user = User.objects.create_superuser(
+            'super@user.com', 'foo'
+        )
         self.assertEqual(admin_user.email, 'super@user.com')
         self.assertTrue(admin_user.check_password('foo'))
         self.assertTrue(admin_user.is_staff)
         self.assertTrue(admin_user.is_superuser)
 
+
 class UserModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         User = get_user_model()
-        User.objects.create_user(email='test@user.com', password='foo', name='Test User')
+        User.objects.create_user(
+            email='test@user.com', password='foo', name='Test User'
+        )
 
     def test_email_label(self):
         User = get_user_model()

@@ -7,6 +7,7 @@ from .forms import CustomUserCreationForm
 from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import get_object_or_404, redirect
 
+
 # Custom Login View
 class CustomLoginView(LoginView):
     """
@@ -23,6 +24,7 @@ class CustomLoginView(LoginView):
         """
         response = super().form_valid(form)
         return response
+
 
 # Custom Logout View
 class CustomLogoutView(LogoutView):
@@ -41,11 +43,13 @@ class CustomLogoutView(LogoutView):
         messages.success(request, 'Logout successful. Goodbye!')
         return response
 
+
 # Custom Registration View
 class CustomRegistrationView(CreateView):
     """
     Custom Registration View that extends Django's built-in CreateView.
-    This view handles user registration and redirects to the login page upon successful registration.
+    This view handles user registration 
+    and redirects to the login page upon successful registration.
     """
     model = User
     form_class = CustomUserCreationForm
@@ -58,7 +62,8 @@ class CustomRegistrationView(CreateView):
         It should return an HttpResponse.
         """
         response = super().form_valid(form)
-        messages.success(self.request, 'Account created successfully. Please log in.')
+        messages.success(self.request, 
+                         'Account created successfully. Please log in.')
         return response
     
 

@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .forms import CustomUserCreationForm
 
+
 class CustomUserCreationFormTest(TestCase):
     def test_form_valid(self):
         form = CustomUserCreationForm(data={

@@ -8,4 +8,3 @@ urlpatterns = [
     path('register/', CustomRegistrationView.as_view(), name='register'),
     path('suspend/<int:user_id>/', suspend_user, name='suspend_user'),
 ]
-
