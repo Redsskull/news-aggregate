@@ -147,7 +147,7 @@ The color scheme is based on the blog template found [here](https://startbootstr
 | Testimonials page - html | W3C validator - source code | No issues found | ✅ |
 | Report a bug page - html | W3C validator - source code | No issues found | ✅ |
 | Sign-in page - html | W3C validator - source code | No issues found | ✅ |
-| Home page - html | lighthouse | [Acceptable scores](static/images-readme/readme-lighthouse.png) | ✅ |
+| Home page - html | lighthouse | [Acceptable scores](images/lighthouse.jpg) | ✅ |
 | Testimonials page - html | lighthouse | Acceptable scores | ✅ |
 | Report a bug page - html | lighthouse | Acceptable scores | ✅ |
 | Sign-in page - html | lighthouse | Acceptable scores | ✅ |
