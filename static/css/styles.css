@@ -99,7 +99,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background: #284b63;
+  background-color: #284b63;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   display: flex;
@@ -110,7 +110,7 @@ body {
 }
 
 header {
-  background: #284b63; 
+  background-color: #284b63; 
 }
 
 footer {

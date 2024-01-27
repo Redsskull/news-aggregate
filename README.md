@@ -4,7 +4,7 @@
 
 ![Site view across devices](images/responsive.jpg)
 
-The live link for "Reds News Aggregate" can be found [HERE](https://reds-news-aggregate.example.com/)
+The live link for "Reds News Aggregate" can be found [HERE](https://news-aggg-e8d964e38f71.herokuapp.com/)
 
 ## Table of Contents
 + [Purpose](#purpose "Purpose")
